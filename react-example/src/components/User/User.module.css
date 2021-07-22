@@ -1,0 +1,11 @@
+.UserWrap {
+    border: 1px solid black;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: rgba(143, 188, 143, 0.65);
+}
+
+.UserWrap:hover {
+    background-color: rgba(143, 188, 143, 0.34);
+}
