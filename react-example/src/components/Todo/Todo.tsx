@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {ITodoProps} from "../../Types/types";
+import {ITodoProps} from "../../types/types";
 import classes from './Todo.module.css'
 
 const Todo: FC<ITodoProps> = ({todo}) => {

@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {IUserProps} from "../../Types/types";
+import {IUserProps} from "../../types/types";
 import {useHistory} from "react-router-dom";
 import classes from './User.module.css'
 

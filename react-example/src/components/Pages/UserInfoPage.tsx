@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from "react";
-import {IUser, IUserInfoPage, IUserProps} from "../../Types/types";
+import {IUser, IUserInfoPage, IUserProps} from "../../types/types";
 import axios from "axios";
 import {useParams, useHistory} from 'react-router-dom'
 

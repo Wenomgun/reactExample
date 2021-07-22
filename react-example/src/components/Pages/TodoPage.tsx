@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from "react";
-import {ITodo, IUser} from "../../Types/types";
+import {ITodo, IUser} from "../../types/types";
 import List from "../Common/List";
 import axios from "axios";
 import Todo from "../Todo/Todo";

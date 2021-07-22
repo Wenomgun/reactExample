@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {IUserList} from "../../Types/types";
+import {IUserList} from "../../types/types";
 import User from "../User/User";
 
 const UserList: FC<IUserList> = ({users}) => {

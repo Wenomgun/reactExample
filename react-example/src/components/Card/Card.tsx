@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {ECardVariant, ICard} from "../../Types/types";
+import {ECardVariant, ICard} from "../../types/types";
 
 const Card: FC<ICard> = ({clickButton, width, height, children, variant}) => {
     return (
