@@ -13,8 +13,8 @@ function App() {
                 <h1>React example</h1>
                 <BrowserRouter>
                     <div>
-                        <NavLink to={'/users'}>Users</NavLink>
-                        <NavLink to={'/todos'}>Todos</NavLink>
+                        <NavLink to={'/users'} className='LinkWrap'>Users</NavLink>
+                        <NavLink to={'/todos'} className='LinkWrap'>Todos</NavLink>
                     </div>
 
                     <Route path={'/users'} exact>
