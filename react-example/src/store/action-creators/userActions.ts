@@ -3,7 +3,6 @@ import axios from "axios";
 import {IUser} from "../../types/types";
 import {Dispatch} from "redux";
 
-
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {

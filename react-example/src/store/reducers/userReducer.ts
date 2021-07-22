@@ -1,4 +1,3 @@
-import {IUser} from "../../types/types";
 import {IUserState, TypesAction, UserAction} from "../../types/userTypes";
 
 const initialState: IUserState = {
