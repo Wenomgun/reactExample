@@ -6,12 +6,16 @@ import {useTypeSelector} from "../../hooks/useTypeSelector";
 import {fetchUsers} from "../../store/action-creators/userActions";
 import loading from '../../loadinfo.gif';
 import {useActions} from "../../hooks/useActions";
+import {useDispatch} from "react-redux";
+import {requestUsers} from "../../saga/userSaga";
 
 const UserPage: FC = () => {
     const {users, isLoading, error} = useTypeSelector(state => state.users);
-    const {fetchUsers} = useActions();
+    // const {fetchUsers} = useActions();
+    const dispatch = useDispatch();
     useEffect(() => {
-        fetchUsers();
+        // fetchUsers();
+        dispatch(requestUsers())
     }, []);
 
     if (isLoading) {

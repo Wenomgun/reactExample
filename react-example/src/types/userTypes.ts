@@ -9,7 +9,8 @@ export interface IUserState {
 export enum TypesAction {
     FETCH_USERS = 'FETCH_USERS',
     FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
-    FETCH_USERS_ERROR = 'FETCH_USERS_ERROR'
+    FETCH_USERS_ERROR = 'FETCH_USERS_ERROR',
+    REQUEST_USERS = 'REQUEST_USERS'
 }
 
 interface IUserActionFetch {

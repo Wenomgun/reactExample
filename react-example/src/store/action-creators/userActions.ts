@@ -14,3 +14,23 @@ export const fetchUsers = () => {
         }
     }
 }
+
+export const fetchUserAction = () => {
+    return {
+        type: TypesAction.FETCH_USERS
+    }
+}
+
+export const fetchUserSuccessAction = (data: any[]) => {
+    return {
+        type: TypesAction.FETCH_USERS_SUCCESS,
+        payload: data
+    }
+}
+
+export const fetchUserErrorAction = () => {
+    return {
+        type: TypesAction.FETCH_USERS_ERROR,
+        payload: 'Error users load'
+    }
+}
