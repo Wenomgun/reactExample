@@ -4,15 +4,11 @@ import {fetchUserAction, fetchUserErrorAction, fetchUserSuccessAction} from "../
 import axios from "axios";
 import {IUser} from "../types/types";
 
-export const requestUsers = () => {
-    return {type: TypesAction.REQUEST_USERS}
+export function* requestUsersWatcher() {
+    yield takeEvery(TypesAction.REQUEST_USERS, fetchUsersWorker);
 }
 
-export function* watchRequestUsers() {
-    yield takeEvery(TypesAction.REQUEST_USERS, fetchUsersAsync);
-}
-
-function* fetchUsersAsync(): Generator {
+function* fetchUsersWorker(): Generator {
     try {
         yield put(fetchUserAction());
         const data = yield call(() => {
@@ -20,7 +16,6 @@ function* fetchUsersAsync(): Generator {
         });
         yield put(fetchUserSuccessAction(data as any[]));
     } catch (e) {
-        yield put(fetchUserErrorAction());
+        yield put(fetchUserErrorAction('Error users load'));
     }
-
 }

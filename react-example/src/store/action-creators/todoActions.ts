@@ -1,7 +1,7 @@
 import axios from "axios";
-import {IUser} from "../../types/types";
+import {ITodo, IUser} from "../../types/types";
 import {Dispatch} from "redux";
-import {TodoAction, TypesAction} from "../../types/todoTypes";
+import {ITodoActionRequest, TodoAction, TypesAction} from "../../types/todoTypes";
 
 export const fetchTodos = (page: number, limit: number) => {
     return async (dispatch: Dispatch<TodoAction>) => {
@@ -20,6 +20,27 @@ export const fetchTodos = (page: number, limit: number) => {
     }
 }
 
-export const changeTodoPage = (page: number) => {
+export const changeTodoPage = (page: number): TodoAction => {
     return {type :TypesAction.CHANGE_PAGE, payload: page}
+}
+
+export const fetchTodoAction = (): TodoAction => {
+    return {type :TypesAction.FETCH_TODOS}
+}
+
+export const requestTodoAction = (page: number, limit: number): ITodoActionRequest => {
+    return {
+        type :TypesAction.REQUEST_TODO,
+        payload: {
+            page,
+            limit
+        }}
+}
+
+export const fetchTodoSuccessAction = (data: any[]): TodoAction => {
+    return {type :TypesAction.FETCH_TODOS_SUCCESS, payload: data}
+}
+
+export const fetchTodoErrorAction = (msg: string): TodoAction => {
+    return {type :TypesAction.FETCH_TODOS_ERROR, payload: msg}
 }

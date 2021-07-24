@@ -14,10 +14,21 @@ export enum TypesAction {
     FETCH_TODOS_SUCCESS = 'FETCH_TODOS_SUCCESS',
     FETCH_TODOS_ERROR = 'FETCH_TODOS_ERROR',
     CHANGE_PAGE = 'CHANGE_PAGE',
+    REQUEST_TODO = 'REQUEST_TODO'
 }
 
-interface ITodoActionFetch {
+export interface ITodoActionFetch {
     type: TypesAction.FETCH_TODOS
+}
+
+export interface ITodoActionRequest {
+    type: TypesAction.REQUEST_TODO,
+    payload: ITodoRequest
+}
+
+interface ITodoRequest {
+    limit: number;
+    page: number;
 }
 
 interface ITodoActionFetchSuccess {

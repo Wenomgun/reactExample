@@ -14,10 +14,10 @@ const TodoPage: FC = () => {
     for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
     }
-    const {fetchTodos} = useActions();
+    const {requestTodoAction} = useActions();
     const {changeTodoPage} = useActions();
     useEffect(() => {
-        fetchTodos(page, limit);
+        requestTodoAction(page, limit);
     }, [page]);
 
     const changeCurrentPage = (page: number) => {

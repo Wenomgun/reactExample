@@ -3,34 +3,39 @@ import axios from "axios";
 import {IUser} from "../../types/types";
 import {Dispatch} from "redux";
 
+// use thunk example
 export const fetchUsers = () => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
-            dispatch({type: TypesAction.FETCH_USERS});
+            dispatch(fetchUserAction());
             const resp = await axios.get<IUser[]>('https://jsonplaceholder.typicode.com/users');
-            dispatch({type :TypesAction.FETCH_USERS_SUCCESS, payload: resp.data});
+            dispatch(fetchUserSuccessAction(resp.data));
         } catch (e) {
-            dispatch({type :TypesAction.FETCH_USERS_ERROR, payload: 'Error users load'});
+            dispatch(fetchUserErrorAction('Error users load'));
         }
     }
 }
 
-export const fetchUserAction = () => {
+export const requestUsersAction = () => {
+    return {type: TypesAction.REQUEST_USERS}
+}
+
+export const fetchUserAction = (): UserAction => {
     return {
         type: TypesAction.FETCH_USERS
     }
 }
 
-export const fetchUserSuccessAction = (data: any[]) => {
+export const fetchUserSuccessAction = (data: any[]): UserAction => {
     return {
         type: TypesAction.FETCH_USERS_SUCCESS,
         payload: data
     }
 }
 
-export const fetchUserErrorAction = () => {
+export const fetchUserErrorAction = (msg: string): UserAction => {
     return {
         type: TypesAction.FETCH_USERS_ERROR,
-        payload: 'Error users load'
+        payload: msg
     }
 }
